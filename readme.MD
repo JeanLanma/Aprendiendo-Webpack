@@ -9,10 +9,10 @@ Lo primero sera instalar webpack y su cli como dev
 
 ## crear el archivo de configuracion ** webpack.config.js **
 
-la forma mas simple es con *** module.exports = {} ***
+la forma mas simple es con ** module.exports = {} **
 exportando el objeto que contendra las configuraciones
 
-### elemtnos esenciales para la configuracion
+### elementos esenciales para la configuracion
 ```
 module.exports = {
     "entry": "./index.js",
@@ -24,8 +24,8 @@ module.exports = {
 ```
 
 propiedades    
-:-entry : define el punto de entrada de webpack    
-:-output: informacion sobre lo que se espera de webpack como
+-entry : define el punto de entrada de webpack    
+-output: informacion sobre lo que se espera de webpack como
          salida    
     -filename: nombre del archivo resultante
     -path: carpeta de destino de los archivos ya procesados
@@ -66,7 +66,7 @@ tipo de archivos como css, html imagenes etc.
 webpack usa los loaders para poder entender estos archivos
 extras
 
-### use mas a fondo
+### 'use' mas a fondo
 
 Es posible pasarle a use un objeto con opciones
 si el loader lo permite ( ver documentacion de loader )
@@ -139,6 +139,21 @@ propiedad a la raiz del objeto, no se puede poner
 dentro de module, entry u outpu, "plugins" requiere
 de una nueva propiedad que almacena un array
 
+## Añadiendo TypeScript
+
+Para añadir typescript puro y transpilar a JS es necesario
+instañar typescript y ts-loader como dependencia de 
+desarrollo   
+
+`$ npm i --save-dev typescript`
+`$ npm i --save-dev ts-loader`
+
+complementario es necesario agregar las configuraciones de
+typescript con el `tsconfig.js`(./tsconfig.js) 
+y tambien especificar la nueva regla dentro del array 
+de reglas webpack config, ver el **webpack.config.js** para
+ver todas las configuraciones que se añadieron
+
 ## Scripts dentro de Package.json
 
 El script mas bascio para poder usar webpack es
@@ -158,7 +173,7 @@ y puedes añadirlos a los scripts de npm
     "build:prod": "npm run build -- --env.mode=prod"
   },
 ```
-### scripts utiles para configurar el modo
+### Scripts utiles para configurar el modo
 con los script de arriba es posible definir el modo en el 
 que se ejecutara el build de webpack
 y dependiendo el modo podemos ejecutar ciertas acciones o
