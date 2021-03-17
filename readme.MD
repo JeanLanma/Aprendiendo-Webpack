@@ -11,6 +11,7 @@ la forma mas simple es con *** module.exports = {} ***
 exportando el objeto que contendra las configuraciones
 
 ### elemtnos esenciales para la configuracion
+```
 module.exports = {
     "entry": "./index.js",
     "output": {
@@ -18,6 +19,7 @@ module.exports = {
         "path": 'bundle'
     }
 }
+```
 
 propiedades:
 -entry : define el punto de entrada de webpack
@@ -29,7 +31,7 @@ propiedades:
     de preferencia usar "path" de Nodejs
 
 ### reglas, avanzando en la configuracion de webpack
-
+```
 module.exports = {
     "entry": "./index.js",
     "output": {
@@ -48,7 +50,7 @@ module.exports = {
         ]
     }
 }
-
+```
 El siguiente elemento es "module"
 -module : modulos a usar
 --rules : reglas a aplicar
@@ -66,7 +68,7 @@ extras
 
 Es posible pasarle a use un objeto con opciones
 si el loader lo permite ( ver documentacion de loader )
-
+```
 module.exports = {
     "entry": "./index.js",
     "output": {
@@ -88,7 +90,7 @@ module.exports = {
         ]
     }
 }
-
+```
 ### Hash en los nombres de los archivos
 "[hash].filename.js : agregando este atributo a el nombre
 nombre de los archivos podemos agregarle un hash unico
@@ -105,7 +107,7 @@ para esto
 1.-se instala el plugin
 2.-se require el plugin ( require() ) en el archivo
 de configuracion de webpack
-
+``` javascript
 module.exports = {
     "entry": "./index.js",
     "output": {
@@ -128,7 +130,7 @@ module.exports = {
     },
     "plugins": [ new plugintitle()]
 }
-
+```
 Para agregar plugins es necesario agregar una nueva
 propiedad a la raiz del objeto, no se puede poner
 dentro de module, entry u outpu, "plugins" requiere
@@ -145,14 +147,14 @@ estara siempre atento a los cambios que ocurran en nuestro
 punto de entrada
 
 y puedes añadirlos a los scripts de npm
-
+```json
 "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
     "build:dev": "npm run build -- --env.mode=dev",
     "build:prod": "npm run build -- --env.mode=prod"
   },
-
+```
 ### scripts utiles para configurar el modo
 con los script de arriba es posible definir el modo en el 
 que se ejecutara el build de webpack
