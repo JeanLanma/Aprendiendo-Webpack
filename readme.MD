@@ -1,9 +1,11 @@
-# Iniciando
+# Aprendiendo a usar Webpack : Conceptos
+
+## Iniciando
 
 Lo primero sera instalar webpack y su cli como dev
 
-$ npm i --save-dev webpack
-$ npm i --save-dev webpack-cli
+`$ npm i --save-dev webpack`
+`$ npm i --save-dev webpack-cli`
 
 ## crear el archivo de configuracion ** webpack.config.js **
 
@@ -21,12 +23,12 @@ module.exports = {
 }
 ```
 
-propiedades:
--entry : define el punto de entrada de webpack
--output: informacion sobre lo que se espera de webpack como
-         salida
-   -filename: nombre del archivo resultante
-   -path: carpeta de destino de los archivos ya procesados
+propiedades    
+:-entry : define el punto de entrada de webpack    
+:-output: informacion sobre lo que se espera de webpack como
+         salida    
+    -filename: nombre del archivo resultante
+    -path: carpeta de destino de los archivos ya procesados
     por webpack, esta propiedad requiere un path absoluto
     de preferencia usar "path" de Nodejs
 
@@ -51,16 +53,16 @@ module.exports = {
     }
 }
 ```
-El siguiente elemento es "module"
--module : modulos a usar
---rules : reglas a aplicar
----test : que archivos seran, se usa una regex para esto
+El siguiente elemento es "module"    
+-module : modulos a usar    
+--rules : reglas a aplicar    
+---test : que archivos seran, se usa una regex para esto    
 ---use  : que loaders usar, esto se leen de un array que se
-le en orden invertido o del ultimo al primero
+le en orden invertido o del ultimo al primero    
 
 webpack por default solo es capaz de leer archvios de 
 JavaScript o JSON asi que para poder procesar otro
-tipo de archivos como css, html imagenes etc.
+tipo de archivos como css, html imagenes etc.    
 webpack usa los loaders para poder entender estos archivos
 extras
 
@@ -101,12 +103,13 @@ Los loader tienen la limitacion de que solo pueden
 procesar archivos dependiendo del lenguaje que sean
 js, sass, jp etc..
 
+
 pero para extender mas a webpack es posible instalar
 Plugins para poder hacer mas que solo procesar archivos
-para esto
-1.-se instala el plugin
+para esto    
+1.-se instala el plugin   
 2.-se require el plugin ( require() ) en el archivo
-de configuracion de webpack
+de configuracion de webpack   
 ``` javascript
 module.exports = {
     "entry": "./index.js",
